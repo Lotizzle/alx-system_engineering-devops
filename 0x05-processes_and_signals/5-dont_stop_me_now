@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script terminates the the process in 4-to_infinity_and_beyond
+
+if pgrep -x "4-to_infinity_and_beyond" > /dev/null
+then
+	pkill -x "4-to_infinity_and_beyond"
+fi
