@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory after the first delimeter.
+
+for file in *; do
+	if [ -f "$file" ] && [[ $file == *-* ]]; then
+		echo "${file#*-}"
+	fi;
+done
