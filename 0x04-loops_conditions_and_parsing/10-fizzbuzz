@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script prints 1 to 100 using the Fizzbuzz trick
+
+NUM=1
+
+while [ "$NUM" -le 100 ]; do
+	if (("$NUM" % 3 == 0)) && (("$NUM" % 5 == 0)); then
+		echo "FizzBuzz"
+	elif (("$NUM" % 3 == 0)); then
+		echo "Fizz"
+	elif (("$NUM" % 5 == 0)); then
+		echo "Buzz"
+	else
+		echo "$NUM"
+	fi
+	((NUM++));
+done
