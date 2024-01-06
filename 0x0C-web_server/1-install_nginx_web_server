@@ -5,8 +5,7 @@ sudo apt-get update
 
 sudo apt-get install -y nginx
 
-echo "<!DOCTYPE html><html><head><title>Hello World!</title></head>
-<body><h1>Hello World!</h1></body></html>" | sudo tee /var/www/html/index.html
+echo "Hello World!" | sudo tee /var/www/html/index.html
 
 sudo bash -c 'echo "server {
         listen 80 default_server;
@@ -18,7 +17,7 @@ sudo bash -c 'echo "server {
         server_name _;
 
         location / {
-                try_files $uri $uri/ =404;
+                try_files \$uri \$uri/ =404;
         }
 }" > /etc/nginx/sites-available/default'
 
