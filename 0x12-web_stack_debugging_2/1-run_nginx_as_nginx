@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Fixes this container so that Nginx is running as the nginx user.
+service nginx stop
+sed -i 's/^user.*/user nginx;/' /etc/nginx/nginx.conf
+sed -i 's/\(listen[[:space:]]\+\)80;/\18080;/' /etc/nginx/sites-available/default
+service nginx start
