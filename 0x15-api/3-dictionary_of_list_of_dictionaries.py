@@ -14,7 +14,7 @@ def fetch_user_date():
     export_data = {}
 
     for user in users:
-        user_id  = user["id"]
+        user_id = user["id"]
 
         todo_response = requests.get(url + f"todos?userId={user_id}")
 
@@ -31,6 +31,7 @@ def fetch_user_date():
             export_data[user_id].append(task_info)
 
     return export_data
+
 
 if __name__ == "__main__":
     export_data = fetch_user_date()
